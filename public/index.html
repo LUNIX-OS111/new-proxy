@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>WebGL Game Proxy</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>WebGL Game Proxy Website</h1>
+
+  <div id="container">
+    <div id="browser">
+      <input type="text" id="url" placeholder="Enter game URL (e.g., https://1v1.lol)" value="https://1v1.lol" />
+      <button onclick="navigate()">Browse</button>
+      <iframe id="gameframe" src="games/1v1lol.html"></iframe>
+    </div>
+    <div id="chat">
+      <h2>Real-Time Chat</h2>
+      <ul id="messages"></ul>
+      <input id="message" autocomplete="off" placeholder="Type a message"/><button onclick="sendMessage()">Send</button>
+    </div>
+  </div>
+
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="client.js"></script>
+</body>
+</html>
